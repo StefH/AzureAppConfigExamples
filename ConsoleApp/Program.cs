@@ -11,7 +11,9 @@ namespace ConsoleApp
             builder.AddAzureAppConfiguration(Environment.GetEnvironmentVariable("AzureAppConfigConnectionString_StefHeyenrath"));
 
             var config = builder.Build();
-            Console.WriteLine(config["TestApp:Settings:Message"] ?? "Hello world!");
+
+            Console.WriteLine("TestApp:Settings:Message = '{0}", config["TestApp:Settings:Message"]);
+            Console.WriteLine("MyFirstKeyVaultThing     = '{0}", config["MyFirstKeyVaultThing"]);
         }
     }
 }
